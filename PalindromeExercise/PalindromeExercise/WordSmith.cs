@@ -8,10 +8,31 @@ namespace PalindromeExercise
 {
     public class WordSmith
     {
-        public WordSmith() { }
-        public string IsAPalindrone(bool isAPalindrone) 
+        public bool IsAPalindrome(string word) 
         {
-            return "empty";
+            
+
+            if (word == null || word.Length == 0)
+            {
+                return false;
+            }
+
+            word = word.ToLower();
+            string wordBackwords = "";
+
+            for (int i = word.Length -1; i >= 0; i--)
+            {
+                wordBackwords += word[i];
+
+            }
+            if (word == wordBackwords)
+            {
+                return true;
+            }
+            else
+                return false;
+
+            
         }
     }
 }
